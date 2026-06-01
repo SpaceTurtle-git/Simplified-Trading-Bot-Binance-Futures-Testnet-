@@ -1,0 +1,4 @@
+httpx
+typer
+pydantic
+python-dotenv

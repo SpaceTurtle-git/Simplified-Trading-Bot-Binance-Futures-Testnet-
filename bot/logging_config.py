@@ -1,0 +1,13 @@
+import logging
+from logging.handlers import RotatingFileHandler
+
+def setup_logging():
+    logger = logging.getLogger("trading_bot")
+    logger.setLevel(logging.INFO)
+    handler = RotatingFileHandler("trading_bot.log", maxBytes=1000000, backupCount=3)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    return logger
+
+logger = setup_logging()
